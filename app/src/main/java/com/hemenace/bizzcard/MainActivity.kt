@@ -1,5 +1,4 @@
 package com.hemenace.bizzcard
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -23,6 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.hemenace.bizzcard.ui.theme.BizzCardTheme
@@ -101,7 +101,6 @@ fun CreateBizCard() {
 
 @Composable
 fun Content() {
-
     Box(
         modifier = Modifier
             .fillMaxHeight()
@@ -138,7 +137,7 @@ fun Portfolio(data: List<String>) {
                         .background(MaterialTheme.colors.surface)
                         .padding(16.dp)
                 ) {
-                    CreateImageProfile(modifier = Modifier.size(100.dp))
+                    CreateImageProfile(modifier = Modifier.size(50.dp))
                     Text(text = item)
                 }
 
@@ -170,10 +169,17 @@ private fun CreateInfo() {
     }
 }
 
+
+@Composable
+private fun CreateAnotherImageProfile(){
+
+}
+
+
 @Composable
 private fun CreateImageProfile(modifier: Modifier = Modifier) {
     Surface(
-        modifier = Modifier.size(150.dp),
+        modifier = modifier.size(125.dp),
         shape = CircleShape,
         border = BorderStroke(0.2.dp, Color.White),
         elevation = 6.dp,
@@ -181,16 +187,16 @@ private fun CreateImageProfile(modifier: Modifier = Modifier) {
     ) {
 
         Image(
-            painter = painterResource(id = R.drawable.original),
+            painter = painterResource(id = R.drawable.luis),
             contentDescription = "profile image",
-            modifier = Modifier.size(size = 135.dp),
+            modifier = Modifier.size(size = 125.dp),
             contentScale = ContentScale.Crop
         )
     }
 }
 
 
-//@Preview(showBackground = true)
+@Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     BizzCardTheme {
