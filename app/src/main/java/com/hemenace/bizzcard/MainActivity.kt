@@ -130,6 +130,8 @@ fun Portfolio(data: List<String>) {
                     .padding(13.dp)
                     .fillMaxWidth(),
                 shape = RectangleShape
+
+
             ) {
                 Row(
                     modifier = Modifier
